@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>برنامج محاسبي شامل</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>تسجيل الدخول</h1>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="اسم المستخدم" required>
+            <input type="password" id="password" placeholder="كلمة المرور" required>
+            <button type="submit">تسجيل الدخول</button>
+        </form>
+        <button id="createAccountBtn">إنشاء حساب جديد</button>
+        <div id="message"></div>
+    </div>
+    <div id="dashboard" class="hidden">
+        <h2>لوحة التحكم</h2>
+        <nav>
+            <button onclick="showSection('suppliers')">الموردين</button>
+            <button onclick="showSection('clients')">العملاء</button>
+            <button onclick="showSection('employees')">الموظفين</button>
+            <button onclick="showSection('debts')">الديون</button>
+            <button onclick="showSection('expenses')">الصرفيات</button>
+            <button onclick="showSection('sales')">المبيعات</button>
+            <button onclick="showSection('capital')">رأس المال</button>
+            <button onclick="showSection('profits_losses')">الأرباح والخسائر</button>
+            <button onclick="showSection('createSubAccount')">فتح حساب فرعي</button>
+        </nav>
+        <div id="sections">
+            <div id="suppliers" class="section hidden">
+                <h3>الموردين</h3>
+                <button onclick="addSupplier()">إضافة مورد</button>
+                <!-- استعراض الموردين -->
+            </div>
+            <div id="clients" class="section hidden">
+                <h3>العملاء</h3>
+                <button onclick="addClient()">إضافة عميل</button>
+                <!-- استعراض العملاء -->
+            </div>
+            <div id="createSubAccount" class="section hidden">
+                <h3>فتح حساب فرعي</h3>
+                <input type="text" id="subAccountName" placeholder="اسم الحساب" required>
+                <button onclick="createSubAccount()">إنشاء حساب</button>
+                <div id="subAccountMessage"></div>
+            </div>
+            <!-- أضف بقية الأقسام هنا -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
